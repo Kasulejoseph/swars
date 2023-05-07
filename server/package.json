@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "server": "nodemon --require @babel/register index.ts"
+    "server": "nodemon --require @babel/register index.ts",
+    "build": "rm -rf build && babel -d ./build ../server  --extensions '.ts' --ignore node_modules/",
+    "start": "node ./build/index.js"
   },
   "repository": {
     "type": "git",
@@ -26,6 +28,7 @@
     "@babel/cli": "^7.21.5",
     "@babel/core": "^7.21.8",
     "@babel/preset-env": "^7.21.5",
+    "@babel/preset-typescript": "^7.21.5",
     "@babel/register": "^7.21.0",
     "@types/jest": "^29.5.1",
     "jest": "^29.5.0",
