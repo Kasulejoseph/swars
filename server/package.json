@@ -6,7 +6,7 @@
   "scripts": {
     "test": "jest",
     "server": "nodemon --require @babel/register index.ts",
-    "build": "rm -rf build && babel -d ./build ../server  --extensions '.ts' --ignore node_modules/",
+    "build": "rm -rf build && babel -d ./build ./  --extensions '.ts' --ignore node_modules/",
     "start": "node ./build/index.js"
   },
   "repository": {
