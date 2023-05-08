@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 import { ListPeople } from './pages/ListPeople';
 import { Container } from 'react-bootstrap';
+import { PersonsDetails } from './pages/PersonsDetails';
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <Container>
       <Routes>
         <Route path="/" Component={ListPeople}/>
+        <Route path="/person" Component={PersonsDetails} />
       </Routes>
       </Container>
     </Router>

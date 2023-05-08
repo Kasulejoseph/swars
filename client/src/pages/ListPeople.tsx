@@ -1,6 +1,7 @@
 import { gql, useQuery } from "@apollo/client";
 import PersonCard from "../components/PersonCard";
 import { Col, Container, Row } from "react-bootstrap";
+import styled from 'styled-components';
 
 const GET_PEOPLE_QUERY = gql`
   query getPeople($page: Int!) {
@@ -42,13 +43,17 @@ export const ListPeople = () => {
 
   return (
     <Container fluid>
-      <Row style={{ padding: "0px" }}>
+      <Row>
         {data.people.people.map((person: PersonType) => (
-          <Col xs="auto" style={{ padding: "1rem" }}>
+          <PersonCol xs="auto">
             <PersonCard person={person} />{" "}
-          </Col>
+          </PersonCol>
         ))}
       </Row>
     </Container>
   );
 };
+
+const PersonCol = styled(Col)`
+  padding: 1rem;
+`;
