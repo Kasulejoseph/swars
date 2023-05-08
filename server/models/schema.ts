@@ -10,8 +10,15 @@ const typeDefs = gql`
   }
 
   type Query {
-    people(page: Int): [Person]
+    people(page: Int): PeopleConnection!
     person(name: String): [Person]
+  }
+
+  type PeopleConnection {
+    next: String
+    previous: String
+    count: Int!
+    people: [Person]!
   }
 `;
 
