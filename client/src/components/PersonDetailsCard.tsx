@@ -57,7 +57,7 @@ const PersonsDetailsCol = styled(Col)`
 
 const PersonsDetailsRow = styled(Row)`
   position: absolute;
-  top: 15%;
+  top: 22%;
 `
 
 export default PersonDetailsCard;
