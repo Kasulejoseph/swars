@@ -11,9 +11,19 @@ export const PageContainer = (props: any) => {
   )
 }
 
-const WrapperContainer = styled(Container)({
-    width: '100%',
-    margin: '0 auto',
-    marginBottom: '3rem',
-    marginTop: '2rem'
-  })
+const WrapperContainer = styled(Container)`
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 3rem;
+    margin-top: 2rem;
+
+    @media (min-width: 1400px)
+    .container,
+    .container-lg,
+    .container-md,
+    .container-sm,
+    .container-xl,
+    .container-xxl {
+    max-width: 1140px;
+}
+  `

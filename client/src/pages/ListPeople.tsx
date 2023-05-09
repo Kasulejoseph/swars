@@ -85,5 +85,7 @@ const PersonCharactersContainer = styled(Container)`
 `
 
 const PersonRow = styled(Row)`
+  display: flex;
+  flex-wrap: wrap;
   justify-content: center;
 `
