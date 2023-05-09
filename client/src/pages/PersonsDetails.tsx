@@ -1,6 +1,7 @@
 import { gql, useQuery } from "@apollo/client";
 import { useLocation, useNavigate } from "react-router-dom";
 import PersonDetailsCard from "../components/PersonDetailsCard";
+import Loader from "../components/Loader";
 
 const GET_PERSON_QUERY = gql`
   query getPerson($name: String) {
@@ -23,16 +24,19 @@ export const PersonsDetails = () => {
   });
   const { data, loading, error } = queryResult;
 
-  if (loading) {
-    return <div>Loading</div>;
-  }
   if (error) {
     return <div>Something went wrong!</div>;
   }
 
-  const navigateBack = () => navigate(-1)
+  const navigateBack = () => navigate(-1);
 
   return (
-    <PersonDetailsCard person={data.person} navigateBack={navigateBack} />
+    <>
+      {loading ? (
+        <Loader />
+      ) : (
+        <PersonDetailsCard person={data.person} navigateBack={navigateBack} />
+      )}
+    </>
   );
 };

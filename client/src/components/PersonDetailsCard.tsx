@@ -26,7 +26,7 @@ const PersonDetailsCard = ({ person, navigateBack }: PersonObjType) => {
       >
         go back
       </PersonsDetailsBackButton>
-      <Row style={{ padding: "5rem" }}>
+      <PersonsDetailsRow >
         <Col>
           <img
             height={"100%"}
@@ -41,7 +41,7 @@ const PersonDetailsCard = ({ person, navigateBack }: PersonObjType) => {
           <span> Mass: {mass}</span>
           <span>Height: {height}</span>
         </PersonsDetailsCol>
-      </Row>
+      </PersonsDetailsRow>
     </Container>
   );
 };
@@ -53,5 +53,10 @@ const PersonsDetailsBackButton = styled(Button)`
 const PersonsDetailsCol = styled(Col)`
   display: grid;
 `;
+
+const PersonsDetailsRow = styled(Row)`
+  position: absolute;
+  top: 15%;
+`
 
 export default PersonDetailsCard;
