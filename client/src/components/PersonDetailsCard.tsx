@@ -28,6 +28,7 @@ const PersonDetailsCard = ({ person, navigateBack }: PersonObjType) => {
       </PersonsDetailsBackButton>
       <PersonsDetailsRow >
         <Col>
+          {/* use random images */}
           <img
             height={"100%"}
             width={"100%"}

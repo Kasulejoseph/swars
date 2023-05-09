@@ -30,6 +30,7 @@ const PersonCard = ({ person }: PersonObjType) => {
 
   return (
     <PersonListCard onClick={navigateTo(person.name)}>
+      {/* use random images instead of hard-coding */}
       <Card.Img
         variant="top"
         src="https://images.unsplash.com/photo-1618336753974-aae8e04506aa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c3RhcndhcnN8ZW58MHx8MHx8&auto=format&fit=crop&w=900&q=60"
