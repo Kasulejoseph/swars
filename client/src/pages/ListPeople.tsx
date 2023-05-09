@@ -50,8 +50,9 @@ export const ListPeople = () => {
       {loading ? (
         <Loader />
       ) : (
-        <Container fluid>
-          <Row>
+        <>
+        <PersonCharactersContainer>All Characters</PersonCharactersContainer>
+          <PersonRow>
             {data.people &&
               data.people.people &&
               data.people.people.map((person: PersonType) => (
@@ -64,8 +65,8 @@ export const ListPeople = () => {
               total={9}
               onPageChange={setPage}
             />
-          </Row>
-        </Container>
+          </PersonRow>
+        </>
       )}
     </>
   );
@@ -74,3 +75,15 @@ export const ListPeople = () => {
 const PersonCol = styled(Col)`
   padding: 1rem;
 `;
+
+const PersonCharactersContainer = styled(Container)`
+  margin-left: 1rem;
+
+  @media (max-width: 767px) {
+    margin-left: 3rem;
+  }
+`
+
+const PersonRow = styled(Row)`
+  justify-content: center;
+`

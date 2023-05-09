@@ -39,7 +39,7 @@ const PersonCard = ({ person }: PersonObjType) => {
         <Card.Text>
           <Row>
             <Col>Height: {person.height}</Col>
-            <Col> Mass: {person.mass}</Col>
+            <PersonListColMass> Mass: {person.mass}</PersonListColMass>
           </Row>
         </Card.Text>
       </Card.Body>
@@ -52,5 +52,11 @@ const PersonListCard = styled(Card)`
   width: 15rem;
   cursor: pointer;
 `;
+
+const PersonListColMass = styled(Col)`
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+`
 
 export default PersonCard;
