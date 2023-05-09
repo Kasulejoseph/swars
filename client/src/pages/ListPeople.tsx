@@ -77,7 +77,7 @@ const PersonCol = styled(Col)`
 `;
 
 const PersonCharactersContainer = styled(Container)`
-  margin-left: 1rem;
+  margin-left: 7rem;
 
   @media (max-width: 767px) {
     margin-left: 3rem;
