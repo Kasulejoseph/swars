@@ -1,8 +1,8 @@
 import { gql, useQuery } from "@apollo/client";
 import PersonCard from "../components/PersonCard";
-import { Col, Container, Row, Spinner } from "react-bootstrap";
+import { Col, Container, Row } from "react-bootstrap";
 import styled from "styled-components";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import ResponsivePagination from "react-responsive-pagination";
 import "react-responsive-pagination/themes/classic.css";
 import { Context } from "../context";
