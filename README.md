@@ -46,6 +46,10 @@ npm run test
   }
 }
 ```
+#### `.env` file
+```
+BASE_URL=paste-URL-here
+```
 
 ## Frontend
 ```
