@@ -1,19 +1,8 @@
-import { gql, useQuery } from "@apollo/client";
+import { useQuery } from "@apollo/client";
 import { useLocation, useNavigate } from "react-router-dom";
 import PersonDetailsCard from "../components/PersonDetailsCard";
 import Loader from "../components/Loader";
-
-const GET_PERSON_QUERY = gql`
-  query getPerson($name: String) {
-    person(name: $name) {
-      name
-      height
-      mass
-      homeworld
-      gender
-    }
-  }
-`;
+import { GET_PERSON_QUERY } from "../utils/swarsQuery";
 
 export const PersonsDetails = () => {
   const { state } = useLocation();

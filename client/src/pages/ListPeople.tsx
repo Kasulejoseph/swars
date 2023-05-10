@@ -1,4 +1,4 @@
-import { gql, useQuery } from "@apollo/client";
+import { useQuery } from "@apollo/client";
 import PersonCard from "../components/PersonCard";
 import { Col, Container, Row } from "react-bootstrap";
 import styled from "styled-components";
@@ -7,24 +7,7 @@ import ResponsivePagination from "react-responsive-pagination";
 import "react-responsive-pagination/themes/classic.css";
 import { Context } from "../context";
 import Loader from "../components/Loader";
-
-const GET_PEOPLE_QUERY = gql`
-  query getPeople($page: Int) {
-    people(page: $page) {
-      next
-      previous
-      count
-      people {
-        name
-        height
-        mass
-        homeworld
-        gender
-      }
-    }
-  }
-`;
-
+import { GET_PEOPLE_QUERY } from "../utils/swarsQuery";
 interface PersonType {
   name: string;
   mass: string;

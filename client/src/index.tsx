@@ -1,37 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { ApolloClient, gql, ApolloProvider } from "@apollo/client";
+import { ApolloProvider } from "@apollo/client";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import { cache } from "./utils/cache";
-
+import client from "./utils/apolloClient";
 import "bootstrap/dist/css/bootstrap.min.css";
-
-// use environment variable for the URL 
-const client = new ApolloClient({
-  cache,
-  uri: "https://swars-production.up.railway.app",
-});
-
-client.query({
-  query: gql`
-    {
-      people(page: 6) {
-        next
-        previous
-        count
-        people {
-          name
-          height
-          mass
-          homeworld
-          gender
-        }
-      }
-    }
-  `,
-});
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
