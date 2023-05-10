@@ -1,5 +1,6 @@
 import { RESTDataSource } from "apollo-datasource-rest";
-import { log } from "console";
+require('dotenv').config()
+
 interface PersonType {
   name: string;
   mass: string;
@@ -19,7 +20,7 @@ interface PersonArgs {
 class PeopleAPI extends RESTDataSource {
   constructor() {
     super();
-    this.baseURL = "https://swapi.dev/api/";
+    this.baseURL = process.env.BASE_URL;
   }
 
   async getAllPeople({ page }: PageArgs) {

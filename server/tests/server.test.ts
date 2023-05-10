@@ -1,7 +1,7 @@
 import api from "../api";
 import { beforeAll, afterAll, describe, expect, it } from "@jest/globals";
 
-beforeAll(() => api.listen({ port: 4000 }));
+beforeAll(() => api.listen({ port: 4001 }));
 afterAll(() => api.stop());
 
 describe("GraphQL API", () => {
@@ -10,18 +10,23 @@ describe("GraphQL API", () => {
       query: `
       query {
         people {
-          name
-          height
-          mass
-          homeworld
-          gender
+          next,
+          previous,
+          count,
+          people {
+            name,
+            height,
+            mass,
+            homeworld,
+            gender
+          }
         }
       }
     `,
     });
     expect(response.errors).toBeUndefined();
     expect(response.data).toHaveProperty("people");
-    expect(response.data?.people).toBeInstanceOf(Array);
+    expect(response.data?.people.people).toBeInstanceOf(Array);
   });
 
   it("should return a person by name", async () => {
