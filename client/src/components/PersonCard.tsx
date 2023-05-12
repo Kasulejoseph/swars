@@ -29,7 +29,7 @@ const PersonCard = ({ person }: PersonObjType) => {
   };
 
   return (
-    <PersonListCard onClick={navigateTo(person.name)}>
+    <PersonListCard onClick={navigateTo(person.name)} data-testid="person-card">
       {/* use random images instead of hard-coding */}
       <Card.Img
         variant="top"
