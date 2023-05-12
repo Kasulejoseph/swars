@@ -39,7 +39,7 @@ export const ListPeople = () => {
             {data.people &&
               data.people.people &&
               data.people.people.map((person: PersonType) => (
-                <PersonCol xs="auto">
+                <PersonCol xs="auto" key={person.name}>
                   <PersonCard person={person} />{" "}
                 </PersonCol>
               ))}
