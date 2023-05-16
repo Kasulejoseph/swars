@@ -1,6 +1,8 @@
 import { RESTDataSource } from "apollo-datasource-rest";
 require('dotenv').config()
-
+// Temp Fix: will ensure you ignore any rejected TLS certificates
+// this is not a recommended solution
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 interface PersonType {
   name: string;
   mass: string;
